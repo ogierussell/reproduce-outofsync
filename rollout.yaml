@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: demo-rollout
+  labels:
+    app: demo-rollout
+spec:
+  replicas: 3
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: demo-rollout
+  template:
+    metadata:
+      labels:
+        app: demo-rollout
+    spec:
+      containers:
+        - name: demo
+          image: nginx:1.25
+          ports:
+            - name: http
+              containerPort: 80
+          env:
+            - name: APP_NAME
+              value: "demo-rollout"
+            - name: LOG_LEVEL
+              value: "INFO"
+            - name: FEATURE_FLAG_X
+              value: "false"
