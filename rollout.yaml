@@ -28,3 +28,9 @@ spec:
               value: "INFO"
             - name: FEATURE_FLAG_X
               value: "false"
+  strategy:
+    canary:
+      maxSurge: 1
+      maxUnavailable: 0
+      steps:
+        - setWeight: 100
