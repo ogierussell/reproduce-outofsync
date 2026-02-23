@@ -23,12 +23,8 @@ spec:
               containerPort: 80
               protocol: TCP
           env:
-            - name: APP_NAME
-              value: "demo-rollout-2"
-            - name: LOG_LEVEL
-              value: "INFO"
-            - name: FEATURE_FLAG_X
-              value: "false"
+            - name: ENV-VAR
+              value: "value-1"
   strategy:
     canary:
       maxSurge: 1
