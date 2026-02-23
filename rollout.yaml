@@ -21,6 +21,7 @@ spec:
           ports:
             - name: http
               containerPort: 80
+              protocol: TCP
           env:
             - name: APP_NAME
               value: "demo-rollout-2"
