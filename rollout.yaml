@@ -24,7 +24,7 @@ spec:
               protocol: TCP
           env:
             - name: ENV-VAR
-              value: "value-2"
+              value: "value-3"
   strategy:
     canary:
       maxSurge: 1
